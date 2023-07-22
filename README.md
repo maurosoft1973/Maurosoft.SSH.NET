@@ -1,5 +1,7 @@
 ﻿SSH.NET is a Secure Shell (SSH-2) library for .NET, optimized for parallelism.
 
+This is a cloned and slightly updated build of SSH.NET with the support for unit test.
+
 [![Version](https://img.shields.io/nuget/v/Maurosoft.SSH.NET)](https://www.nuget.org/packages/Maurosoft.SSH.NET)
 [![NuGet download count](https://img.shields.io/nuget/dt/Maurosoft.SSH.NET)](https://www.nuget.org/packages/Maurosoft.SSH.NET)
 

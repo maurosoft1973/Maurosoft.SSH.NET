@@ -12,10 +12,7 @@
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageIcon>SS-NET-icon-h50.png</PackageIcon>
     <PackageIconUrl />
-    <Description>SSH.NET is a Secure Shell (SSH) library for .NET, optimized for parallelism and with broad framework support.
-
-This is a cloned and slightly updated build of SSH.NET with the support for unit test.
-    </Description>
+    <Description>SSH.NET is a Secure Shell (SSH) library for .NET, optimized for parallelism and with broad framework support.This is a cloned and slightly updated build of SSH.NET with the support for unit test.</Description>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <RepositoryUrl>https://github.com/maurosoft1973/Maurosoft.SSH.NET</RepositoryUrl>
     <PackageProjectUrl>https://github.com/maurosoft1973/Maurosoft.SSH.NET</PackageProjectUrl>
