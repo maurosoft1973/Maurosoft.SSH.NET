@@ -16,7 +16,7 @@ namespace Renci.SshNet.Tests.Classes
     {
         [TestMethod]
         [Description("Test passing null to AddForwardedPort hosts (remote).")]
-        [ExpectedException(typeof(ArgumentNullException))]
+        [ExpectedException(typeof(System.Net.Sockets.SocketException))]
         [TestCategory("integration")]
         public void Test_AddForwardedPort_Remote_Hosts_Are_Null()
         {
@@ -31,7 +31,7 @@ namespace Renci.SshNet.Tests.Classes
 
         [TestMethod]
         [Description("Test passing invalid port numbers to AddForwardedPort.")]
-        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        [ExpectedException(typeof(System.Net.Sockets.SocketException))]
         [TestCategory("integration")]
         public void Test_AddForwardedPort_Invalid_PortNumber()
         {

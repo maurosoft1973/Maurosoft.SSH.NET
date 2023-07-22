@@ -8,6 +8,22 @@
     <LangVersion>5</LangVersion>
     <SignAssembly>true</SignAssembly>
     <TargetFrameworks>net35;net40;netstandard1.3;netstandard2.0</TargetFrameworks>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageIcon>SS-NET-icon-h50.png</PackageIcon>
+    <PackageIconUrl />
+    <Description>SSH.NET is a Secure Shell (SSH) library for .NET, optimized for parallelism and with broad framework support.
+
+This is a cloned and slightly updated build of SSH.NET with the support for unit test.
+    </Description>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <RepositoryUrl>https://github.com/maurosoft1973/Maurosoft.SSH.NET</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/maurosoft1973/Maurosoft.SSH.NET</PackageProjectUrl>
+    <PackageId>Maurosoft.SSH.NET</PackageId>
+    <Authors>Mauro Cardillo</Authors>
+    <Authors>Mauro Cardillo</Authors>
+    <Version>2023.0.2</Version>
+    <PackageTags>ssh ssh.net</PackageTags>
   </PropertyGroup>
 
   <!--
@@ -30,6 +46,21 @@
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' or '$(TargetFramework)' == 'netstandard2.1' ">
     <PackageReference Include="SshNet.Security.Cryptography" Version="[1.3.0]" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\images\logo\png\SS-NET-icon-h50.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="..\..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="..\..\README.md">
+        <Pack>True</Pack>
+        <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
   <PropertyGroup Condition=" '$(TargetFramework)' == 'net35' ">

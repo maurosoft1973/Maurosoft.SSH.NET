@@ -1,10 +1,7 @@
-﻿ ![Logo](images/logo/png/SS-NET-icon-h50.png) SSH.NET
-=======
-SSH.NET is a Secure Shell (SSH-2) library for .NET, optimized for parallelism.
+﻿SSH.NET is a Secure Shell (SSH-2) library for .NET, optimized for parallelism.
 
-[![Version](https://img.shields.io/nuget/vpre/SSH.NET.svg)](https://www.nuget.org/packages/SSH.NET)
-[![NuGet download count](https://img.shields.io/nuget/dt/SSH.NET.svg)](https://www.nuget.org/packages/SSH.NET)
-[![Build status](https://ci.appveyor.com/api/projects/status/ih77qu6tap3o92gu/branch/develop?svg=true)](https://ci.appveyor.com/api/projects/status/ih77qu6tap3o92gu/branch/develop)
+[![Version](https://img.shields.io/nuget/v/Maurosoft.SSH.NET)](https://www.nuget.org/packages/Maurosoft.SSH.NET)
+[![NuGet download count](https://img.shields.io/nuget/dt/Maurosoft.SSH.NET)](https://www.nuget.org/packages/Maurosoft.SSH.NET)
 
 ## Introduction
 This project was inspired by **Sharp.SSH** library which was ported from java and it seems like was not supported
