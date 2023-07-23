@@ -1,0 +1,86 @@
+version: 2.1
+
+jobs:
+  pack:
+    docker:
+      - image: mcr.microsoft.com/dotnet/sdk:6.0-alpine
+    steps:
+      - run:
+          name: Patch image
+          command: |
+            apk add openssh git jq
+      - checkout
+      - run:
+          name: Create cache key
+          command: |
+            touch hashes.txt
+            sha1sum ./.config/dotnet-tools.json >> hashes.txt
+            find . -name "*.csproj*" -type f -exec sha1sum {} \; >> hashes.txt
+      - restore_cache:
+          keys:
+            - dotnet-{{ checksum "hashes.txt" }}
+            - dotnet-
+      - run:
+          name: Restore tools
+          command: |
+            dotnet tool restore
+      - run:
+          name: Restore dependencies
+          command: |
+            dotnet restore
+      - save_cache:
+          paths:
+            - ~/.nuget/packages
+          key: dotnet-{{ checksum "hashes.txt" }}
+      - run:
+          name: Verify
+          command: |
+            dotnet build -p:TreatWarningsAsErrors=True -p:EnforceCodeStyleInBuild=True
+      - run:
+          name: Run Tests
+          command: |
+            dotnet test --logger "junit;LogFilePath=$(pwd)/outputs/tests/{assembly}/{framework}/TestResults.xml"
+      - store_test_results:
+          path: outputs/tests
+      - run:
+          name: Pack
+          command: |
+            VERSION=$(dotnet gitversion | jq -r ".SemVer")
+            dotnet pack --configuration Release -p:Version=$VERSION -o ./outputs/packages/ -p:SymbolPackageFormat=snupkg -p:IncludeSymbols=True -p:DebugType=portable
+      - store_artifacts:
+          path: ./outputs/packages
+          destination: packages
+      - persist_to_workspace:
+          root: ./outputs/packages
+          paths:
+            - "*.nupkg"
+            - "*.snupkg"
+  push:
+    docker:
+      - image: mcr.microsoft.com/dotnet/sdk:6.0
+    steps:
+      - attach_workspace:
+          at: /tmp/workspace
+      - run:
+          name: Push to NuGet
+          command: |
+            dotnet nuget push /tmp/workspace/*.* --api-key ${NUGET_TOKEN} --skip-duplicate --source https://api.nuget.org/v3/index.json
+
+workflows:
+  version: 2
+  default:
+    jobs:
+      - pack:
+          filters:
+            tags:
+              only: /.*/
+      - push:
+          requires:
+            - pack
+          context:
+            - NuGet
+          filters:
+              tags:
+                only: /^v(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$/
+              branches:
+                ignore: /.*/
