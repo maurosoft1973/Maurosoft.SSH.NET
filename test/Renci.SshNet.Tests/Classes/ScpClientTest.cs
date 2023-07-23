@@ -17,7 +17,7 @@ namespace Renci.SshNet.Tests.Classes
     /// Provides SCP client functionality.
     /// </summary>
     [TestClass]
-	[Ignore]
+    [Ignore]
     public partial class ScpClientTest : TestBase
     {
         private Random _random;
@@ -127,7 +127,7 @@ namespace Renci.SshNet.Tests.Classes
             var host = _random.Next().ToString();
             var port = _random.Next(1, 100);
             var userName = _random.Next().ToString();
-            var privateKeys = new[] {GetRsaKey(), GetDsaKey()};
+            var privateKeys = new[] { GetRsaKey(), GetDsaKey() };
 
             var client = new ScpClient(host, port, userName, privateKeys);
             Assert.AreEqual(16 * 1024U, client.BufferSize);
@@ -401,12 +401,12 @@ namespace Renci.SshNet.Tests.Classes
                 var downloadFiles = downloadDirectory.GetFiles("*.*", System.IO.SearchOption.AllDirectories);
 
                 var result = from f1 in uploadedFiles
-                    from f2 in downloadFiles
-                    where
-                    f1.FullName.Substring(uploadDirectory.FullName.Length) ==
-                    f2.FullName.Substring(downloadDirectory.FullName.Length)
-                    && CalculateMD5(f1.FullName) == CalculateMD5(f2.FullName)
-                    select f1;
+                             from f2 in downloadFiles
+                             where
+                             f1.FullName.Substring(uploadDirectory.FullName.Length) ==
+                             f2.FullName.Substring(downloadDirectory.FullName.Length)
+                             && CalculateMD5(f1.FullName) == CalculateMD5(f2.FullName)
+                             select f1;
 
                 var counter = result.Count();
 
@@ -640,7 +640,7 @@ namespace Renci.SshNet.Tests.Classes
         {
             using (var file = new FileStream(fileName, FileMode.Open))
             {
-                var md5 = new MD5CryptoServiceProvider();
+                var md5 = MD5.Create();
                 byte[] retVal = md5.ComputeHash(file);
                 file.Close();
 

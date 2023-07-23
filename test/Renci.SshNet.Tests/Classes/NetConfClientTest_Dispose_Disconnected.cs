@@ -20,7 +20,7 @@ namespace Renci.SshNet.Tests.Classes
         }
 
         [TestCleanup]
-        public void Cleanup()
+        public new void Cleanup()
         {
         }
 

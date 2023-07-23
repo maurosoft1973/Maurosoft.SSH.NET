@@ -14,7 +14,7 @@ namespace Renci.SshNet.Tests.Classes
     /// Implementation of the SSH File Transfer Protocol (SFTP) over SSH.
     /// </summary>
     [TestClass]
-	[Ignore]
+    [Ignore]
     public partial class SftpClientTest : TestBase
     {
         private Random _random;
@@ -42,9 +42,9 @@ namespace Renci.SshNet.Tests.Classes
             var operationTimeout = TimeSpan.FromMilliseconds(_random.Next(0, int.MaxValue - 1));
             var connectionInfo = new PasswordConnectionInfo("host", 22, "admin", "pwd");
             var target = new SftpClient(connectionInfo)
-                {
-                    OperationTimeout = operationTimeout
-                };
+            {
+                OperationTimeout = operationTimeout
+            };
 
             var actual = target.OperationTimeout;
 
@@ -57,9 +57,9 @@ namespace Renci.SshNet.Tests.Classes
             var operationTimeout = TimeSpan.FromMilliseconds(-1);
             var connectionInfo = new PasswordConnectionInfo("host", 22, "admin", "pwd");
             var target = new SftpClient(connectionInfo)
-                {
-                    OperationTimeout = operationTimeout
-                };
+            {
+                OperationTimeout = operationTimeout
+            };
 
             var actual = target.OperationTimeout;
 
@@ -72,9 +72,9 @@ namespace Renci.SshNet.Tests.Classes
             var operationTimeout = TimeSpan.FromMilliseconds(int.MaxValue);
             var connectionInfo = new PasswordConnectionInfo("host", 22, "admin", "pwd");
             var target = new SftpClient(connectionInfo)
-                {
-                    OperationTimeout = operationTimeout
-                };
+            {
+                OperationTimeout = operationTimeout
+            };
 
             var actual = target.OperationTimeout;
 
@@ -1361,6 +1361,7 @@ namespace Renci.SshNet.Tests.Classes
         {
             using (FileStream file = new FileStream(fileName, FileMode.Open))
             {
+#pragma warning disable SYSLIB0021
                 MD5 md5 = new MD5CryptoServiceProvider();
                 byte[] retVal = md5.ComputeHash(file);
                 file.Close();
