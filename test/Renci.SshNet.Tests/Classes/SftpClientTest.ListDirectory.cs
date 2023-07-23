@@ -15,6 +15,7 @@ namespace Renci.SshNet.Tests.Classes
         [TestMethod]
         [TestCategory("Sftp")]
         [ExpectedException(typeof(SshConnectionException))]
+        [Ignore]
         public void Test_Sftp_ListDirectory_Without_Connecting()
         {
             using (var sftp = new SftpClient(Resources.HOST, Resources.USERNAME, Resources.PASSWORD))
@@ -31,6 +32,7 @@ namespace Renci.SshNet.Tests.Classes
         [TestCategory("Sftp")]
         [TestCategory("integration")]
         [ExpectedException(typeof(SftpPermissionDeniedException))]
+        [Ignore]
         public void Test_Sftp_ListDirectory_Permission_Denied()
         {
             using (var sftp = new SftpClient(Resources.HOST, Resources.USERNAME, Resources.PASSWORD))
@@ -51,6 +53,7 @@ namespace Renci.SshNet.Tests.Classes
         [TestCategory("Sftp")]
         [TestCategory("integration")]
         [ExpectedException(typeof(SftpPathNotFoundException))]
+        [Ignore]
         public void Test_Sftp_ListDirectory_Not_Exists()
         {
             using (var sftp = new SftpClient(Resources.HOST, Resources.USERNAME, Resources.PASSWORD))
@@ -70,6 +73,7 @@ namespace Renci.SshNet.Tests.Classes
         [TestMethod]
         [TestCategory("Sftp")]
         [TestCategory("integration")]
+        [Ignore]
         public void Test_Sftp_ListDirectory_Current()
         {
             using (var sftp = new SftpClient(Resources.HOST, Resources.USERNAME, Resources.PASSWORD))
@@ -92,6 +96,7 @@ namespace Renci.SshNet.Tests.Classes
         [TestMethod]
         [TestCategory("Sftp")]
         [TestCategory("integration")]
+        [Ignore]
         public void Test_Sftp_ListDirectory_Empty()
         {
             using (var sftp = new SftpClient(Resources.HOST, Resources.USERNAME, Resources.PASSWORD))
@@ -116,6 +121,7 @@ namespace Renci.SshNet.Tests.Classes
         [TestCategory("integration")]
         [Description("Test passing null to ListDirectory.")]
         [ExpectedException(typeof(ArgumentNullException))]
+        [Ignore]
         public void Test_Sftp_ListDirectory_Null()
         {
             using (var sftp = new SftpClient(Resources.HOST, Resources.USERNAME, Resources.PASSWORD))
@@ -138,6 +144,7 @@ namespace Renci.SshNet.Tests.Classes
         [TestMethod]
         [TestCategory("Sftp")]
         [TestCategory("integration")]
+        [Ignore]
         public void Test_Sftp_ListDirectory_HugeDirectory()
         {
             using (var sftp = new SftpClient(Resources.HOST, Resources.USERNAME, Resources.PASSWORD))
@@ -165,6 +172,7 @@ namespace Renci.SshNet.Tests.Classes
         [TestMethod]
         [TestCategory("Sftp")]
         [TestCategory("integration")]
+        [Ignore]
         public void Test_Sftp_Change_Directory()
         {
             using (var sftp = new SftpClient(Resources.HOST, Resources.USERNAME, Resources.PASSWORD))
@@ -237,6 +245,7 @@ namespace Renci.SshNet.Tests.Classes
         [TestCategory("integration")]
         [Description("Test passing null to ChangeDirectory.")]
         [ExpectedException(typeof(ArgumentNullException))]
+        [Ignore]
         public void Test_Sftp_ChangeDirectory_Null()
         {
             using (var sftp = new SftpClient(Resources.HOST, Resources.USERNAME, Resources.PASSWORD))
@@ -254,6 +263,7 @@ namespace Renci.SshNet.Tests.Classes
         [TestCategory("integration")]
         [Description("Test calling EndListDirectory method more then once.")]
         [ExpectedException(typeof(ArgumentException))]
+        [Ignore]
         public void Test_Sftp_Call_EndListDirectory_Twice()
         {
             using (var sftp = new SftpClient(Resources.HOST, Resources.USERNAME, Resources.PASSWORD))

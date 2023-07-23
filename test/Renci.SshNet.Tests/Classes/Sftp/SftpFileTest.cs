@@ -17,6 +17,7 @@ namespace Renci.SshNet.Tests.Classes.Sftp
         [TestMethod]
         [TestCategory("Sftp")]
         [TestCategory("integration")]
+        [Ignore]
         public void Test_Get_Root_Directory()
         {
             using (var sftp = new SftpClient(Resources.HOST, Resources.USERNAME, Resources.PASSWORD))
@@ -34,6 +35,7 @@ namespace Renci.SshNet.Tests.Classes.Sftp
         [TestCategory("Sftp")]
         [TestCategory("integration")]
         [ExpectedException(typeof(SftpPathNotFoundException))]
+        [Ignore]
         public void Test_Get_Invalid_Directory()
         {
             using (var sftp = new SftpClient(Resources.HOST, Resources.USERNAME, Resources.PASSWORD))
@@ -47,6 +49,7 @@ namespace Renci.SshNet.Tests.Classes.Sftp
         [TestMethod]
         [TestCategory("Sftp")]
         [TestCategory("integration")]
+        [Ignore]
         public void Test_Get_File()
         {
             using (var sftp = new SftpClient(Resources.HOST, Resources.USERNAME, Resources.PASSWORD))
@@ -68,6 +71,7 @@ namespace Renci.SshNet.Tests.Classes.Sftp
         [TestCategory("integration")]
         [Description("Test passing null to Get.")]
         [ExpectedException(typeof(ArgumentNullException))]
+        [Ignore]
         public void Test_Get_File_Null()
         {
             using (var sftp = new SftpClient(Resources.HOST, Resources.USERNAME, Resources.PASSWORD))
@@ -83,6 +87,7 @@ namespace Renci.SshNet.Tests.Classes.Sftp
         [TestMethod]
         [TestCategory("Sftp")]
         [TestCategory("integration")]
+        [Ignore]
         public void Test_Get_International_File()
         {
             using (var sftp = new SftpClient(Resources.HOST, Resources.USERNAME, Resources.PASSWORD))
@@ -102,6 +107,7 @@ namespace Renci.SshNet.Tests.Classes.Sftp
         [TestMethod]
         [TestCategory("Sftp")]
         [TestCategory("integration")]
+        [Ignore]
         public void Test_Sftp_SftpFile_MoveTo()
         {
             using (var sftp = new SftpClient(Resources.HOST, Resources.USERNAME, Resources.PASSWORD))

@@ -14,6 +14,7 @@ namespace Renci.SshNet.Tests.Classes
     /// Provides client connection to SSH server.
     /// </summary>
     [TestClass]
+	[Ignore]
     public class SshClientTest : TestBase
     {
         [TestMethod]

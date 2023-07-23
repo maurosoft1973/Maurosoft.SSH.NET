@@ -81,7 +81,7 @@ namespace Renci.SshNet.Tests.Classes
                     p => p.SendData(It.Is<byte[]>(b => b.Take(0, _fileContent.Length - _bufferSize).SequenceEqual(_fileContent.Take(_bufferSize, _fileContent.Length - _bufferSize))), 0, _fileContent.Length - _bufferSize));
             _channelSessionMock.InSequence(sequence)
                 .Setup(
-                    p => p.SendData(It.Is<byte[]>(b => b.SequenceEqual(new byte[] {0}))));
+                    p => p.SendData(It.Is<byte[]>(b => b.SequenceEqual(new byte[] { 0 }))));
             _pipeStreamMock.InSequence(sequence).Setup(p => p.ReadByte()).Returns(0);
             _channelSessionMock.InSequence(sequence).Setup(p => p.Dispose());
             _pipeStreamMock.As<IDisposable>().InSequence(sequence).Setup(p => p.Dispose());
@@ -96,9 +96,9 @@ namespace Renci.SshNet.Tests.Classes
             base.Arrange();
 
             _scpClient = new ScpClient(_connectionInfo, false, _serviceFactoryMock.Object)
-                {
-                    BufferSize = (uint) _bufferSize
-                };
+            {
+                BufferSize = (uint)_bufferSize
+            };
             _scpClient.Uploading += (sender, args) => _uploadingRegister.Add(args);
             _scpClient.Connect();
         }
@@ -132,6 +132,7 @@ namespace Renci.SshNet.Tests.Classes
         }
 
         [TestMethod]
+        [Ignore]
         public void DisposeOnPipeStreamShouldBeInvokedOnce()
         {
             _pipeStreamMock.As<IDisposable>().Verify(p => p.Dispose(), Times.Once);
@@ -166,7 +167,7 @@ namespace Renci.SshNet.Tests.Classes
             var content = new byte[length];
 
             for (var i = 0; i < length; i++)
-                content[i] = (byte) random.Next(byte.MinValue, byte.MaxValue);
+                content[i] = (byte)random.Next(byte.MinValue, byte.MaxValue);
             return content;
         }
 

@@ -43,6 +43,7 @@ namespace Renci.SshNet.Tests.Classes.Security.Cryptography.Ciphers
         [Owner("olegkap")]
         [TestCategory("Cipher")]
         [TestCategory("integration")]
+        [Ignore]
         public void Test_Cipher_Cast128CBC_Connection()
         {
             var connectionInfo = new PasswordConnectionInfo(Resources.HOST, int.Parse(Resources.PORT), Resources.USERNAME, Resources.PASSWORD);

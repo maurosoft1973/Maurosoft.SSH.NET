@@ -12,12 +12,10 @@ namespace Renci.SshNet.Tests.Classes
     /// Represents remote connection information class.
     /// </summary>
     [TestClass]
-	[Ignore]
     public class ConnectionInfoTest : TestBase
     {
         [TestMethod]
         [TestCategory("ConnectionInfo")]
-		[Ignore]
         public void ConstructorShouldNotThrowExceptionhenProxyTypesIsNoneAndProxyHostIsNull()
         {
             const string proxyHost = null;
@@ -31,7 +29,6 @@ namespace Renci.SshNet.Tests.Classes
 
         [TestMethod]
         [TestCategory("ConnectionInfo")]
-		[Ignore]
         public void ConstructorShouldThrowArgumentNullExceptionhenProxyTypesIsNotNoneAndProxyHostIsNull()
         {
             try
@@ -50,7 +47,6 @@ namespace Renci.SshNet.Tests.Classes
 
         [TestMethod]
         [TestCategory("ConnectionInfo")]
-		[Ignore]
         public void ConstructorShouldNotThrowExceptionWhenProxyTypesIsNotNoneAndProxyHostIsEmpty()
         {
             var proxyHost = string.Empty;
@@ -64,7 +60,6 @@ namespace Renci.SshNet.Tests.Classes
 
         [TestMethod]
         [TestCategory("ConnectionInfo")]
-		[Ignore]
         public void ConstructorShouldThrowArgumentOutOfRangeExceptionWhenProxyTypesIsNotNoneAndProxyPortIsGreaterThanMaximumValue()
         {
             var maxPort = IPEndPoint.MaxPort;
@@ -83,7 +78,6 @@ namespace Renci.SshNet.Tests.Classes
 
         [TestMethod]
         [TestCategory("ConnectionInfo")]
-		[Ignore]
         public void ConstructorShouldThrowArgumentOutOfRangeExceptionWhenProxyTypesIsNotNoneAndProxyPortIsLessThanMinimumValue()
         {
             var minPort = IPEndPoint.MinPort;
@@ -102,7 +96,6 @@ namespace Renci.SshNet.Tests.Classes
 
         [TestMethod]
         [TestCategory("ConnectionInfo")]
-		[Ignore]
         public void Test_ConnectionInfo_ProxyPort_Valid()
         {
             var proxyPort = new Random().Next(IPEndPoint.MinPort, IPEndPoint.MaxPort);
@@ -116,7 +109,6 @@ namespace Renci.SshNet.Tests.Classes
 
         [TestMethod]
         [TestCategory("ConnectionInfo")]
-		[Ignore]
         public void ConstructorShouldNotThrowExceptionWhenProxyTypesIsNotNoneAndProxyUsernameIsNull()
         {
             const string proxyUsername = null;
@@ -130,7 +122,6 @@ namespace Renci.SshNet.Tests.Classes
 
         [TestMethod]
         [TestCategory("ConnectionInfo")]
-		[Ignore]
         public void ConstructorShouldThrowArgumentNullExceptionhenHostIsNull()
         {
             try
@@ -147,7 +138,6 @@ namespace Renci.SshNet.Tests.Classes
 
         [TestMethod]
         [TestCategory("ConnectionInfo")]
-		[Ignore]
         public void ConstructorShouldNotThrowExceptionWhenHostIsEmpty()
         {
             var host = string.Empty;
@@ -161,7 +151,6 @@ namespace Renci.SshNet.Tests.Classes
 
         [TestMethod]
         [TestCategory("ConnectionInfo")]
-		[Ignore]
         public void ConstructorShouldNotThrowExceptionWhenHostIsInvalidDnsName()
         {
             const string host = "in_valid_host.";
@@ -175,7 +164,6 @@ namespace Renci.SshNet.Tests.Classes
 
         [TestMethod]
         [TestCategory("ConnectionInfo")]
-		[Ignore]
         public void Test_ConnectionInfo_Host_Valid()
         {
             var host = new Random().Next().ToString(CultureInfo.InvariantCulture);
@@ -189,7 +177,6 @@ namespace Renci.SshNet.Tests.Classes
 
         [TestMethod]
         [TestCategory("ConnectionInfo")]
-		[Ignore]
         public void ConstructorShouldThrowArgumentOutOfRangeExceptionWhenPortIsGreaterThanMaximumValue()
         {
             const int port = IPEndPoint.MaxPort + 1;
@@ -209,7 +196,6 @@ namespace Renci.SshNet.Tests.Classes
 
         [TestMethod]
         [TestCategory("ConnectionInfo")]
-		[Ignore]
         public void ConstructorShouldThrowArgumentOutOfRangeExceptionWhenPortIsLessThanMinimumValue()
         {
             const int port = IPEndPoint.MinPort - 1;
@@ -229,7 +215,6 @@ namespace Renci.SshNet.Tests.Classes
 
         [TestMethod]
         [TestCategory("ConnectionInfo")]
-		[Ignore]
         public void Test_ConnectionInfo_Port_Valid()
         {
             var port = new Random().Next(IPEndPoint.MinPort, IPEndPoint.MaxPort);

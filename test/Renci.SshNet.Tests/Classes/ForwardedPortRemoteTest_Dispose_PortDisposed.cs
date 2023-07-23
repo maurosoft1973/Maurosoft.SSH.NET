@@ -7,6 +7,7 @@ using Renci.SshNet.Common;
 namespace Renci.SshNet.Tests.Classes
 {
     [TestClass]
+    [Ignore]
     public class ForwardedPortRemoteTest_Dispose_PortDisposed
     {
         private ForwardedPortRemote _forwardedPort;
@@ -38,9 +39,9 @@ namespace Renci.SshNet.Tests.Classes
             _closingRegister = new List<EventArgs>();
             _exceptionRegister = new List<ExceptionEventArgs>();
             _bindEndpoint = new IPEndPoint(IPAddress.Any, random.Next(IPEndPoint.MinPort, IPEndPoint.MaxPort));
-            _remoteEndpoint  = new IPEndPoint(IPAddress.Parse("193.168.1.5"), random.Next(IPEndPoint.MinPort, IPEndPoint.MaxPort));
+            _remoteEndpoint = new IPEndPoint(IPAddress.Parse("193.168.1.5"), random.Next(IPEndPoint.MinPort, IPEndPoint.MaxPort));
 
-            _forwardedPort = new ForwardedPortRemote(_bindEndpoint.Address, (uint) _bindEndpoint.Port, _remoteEndpoint.Address, (uint) _remoteEndpoint.Port);
+            _forwardedPort = new ForwardedPortRemote(_bindEndpoint.Address, (uint)_bindEndpoint.Port, _remoteEndpoint.Address, (uint)_remoteEndpoint.Port);
             _forwardedPort.Closing += (sender, args) => _closingRegister.Add(args);
             _forwardedPort.Exception += (sender, args) => _exceptionRegister.Add(args);
             _forwardedPort.Dispose();

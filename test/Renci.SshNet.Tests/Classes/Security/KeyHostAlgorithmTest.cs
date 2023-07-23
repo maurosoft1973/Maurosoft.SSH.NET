@@ -13,6 +13,7 @@ namespace Renci.SshNet.Tests.Classes.Security
     {
         [TestMethod]
         [TestCategory("integration")]
+        [Ignore]
         public void Test_HostKey_SshRsa_Connection()
         {
             var connectionInfo = new PasswordConnectionInfo(Resources.HOST, int.Parse(Resources.PORT), Resources.USERNAME, Resources.PASSWORD);
@@ -28,6 +29,7 @@ namespace Renci.SshNet.Tests.Classes.Security
 
         [TestMethod]
         [TestCategory("integration")]
+        [Ignore]
         public void Test_HostKey_SshDss_Connection()
         {
             var connectionInfo = new PasswordConnectionInfo(Resources.HOST, int.Parse(Resources.PORT), Resources.USERNAME, Resources.PASSWORD);

@@ -10,7 +10,6 @@ namespace Renci.SshNet.Tests.Classes.Security.Cryptography
     /// </summary>
     /// <typeparam name="T"></typeparam>
     [TestClass]
-	[Ignore]
     public class HMacTest : TestBase
     {
         [TestMethod]

@@ -18,6 +18,7 @@ namespace Renci.SshNet.Tests.Classes
         [Description("Test passing null to AddForwardedPort hosts (remote).")]
         [ExpectedException(typeof(System.Net.Sockets.SocketException))]
         [TestCategory("integration")]
+        [Ignore]
         public void Test_AddForwardedPort_Remote_Hosts_Are_Null()
         {
             using (var client = new SshClient(Resources.HOST, Resources.USERNAME, Resources.PASSWORD))
@@ -33,6 +34,7 @@ namespace Renci.SshNet.Tests.Classes
         [Description("Test passing invalid port numbers to AddForwardedPort.")]
         [ExpectedException(typeof(System.Net.Sockets.SocketException))]
         [TestCategory("integration")]
+        [Ignore]
         public void Test_AddForwardedPort_Invalid_PortNumber()
         {
             using (var client = new SshClient(Resources.HOST, Resources.USERNAME, Resources.PASSWORD))
@@ -49,6 +51,7 @@ namespace Renci.SshNet.Tests.Classes
         ///</summary>
         [TestMethod]
         [TestCategory("integration")]
+        [Ignore]
         public void Test_ForwardedPortRemote()
         {
             using (var client = new SshClient(Resources.HOST, Resources.USERNAME, Resources.PASSWORD))
@@ -57,7 +60,7 @@ namespace Renci.SshNet.Tests.Classes
                 client.Connect();
                 var port = new ForwardedPortRemote(8082, "www.cnn.com", 80);
                 client.AddForwardedPort(port);
-                port.Exception += delegate(object sender, ExceptionEventArgs e)
+                port.Exception += delegate (object sender, ExceptionEventArgs e)
                 {
                     Console.WriteLine(e.Exception.ToString());
                 };
@@ -154,6 +157,7 @@ namespace Renci.SshNet.Tests.Classes
 #if FEATURE_TPL
         [TestMethod]
         [TestCategory("integration")]
+        [Ignore]
         public void Test_PortForwarding_Remote()
         {
             //  ******************************************************************

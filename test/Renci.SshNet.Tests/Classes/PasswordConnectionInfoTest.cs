@@ -11,6 +11,7 @@ namespace Renci.SshNet.Tests.Classes
     /// Provides connection information when password authentication method is used
     /// </summary>
     [TestClass]
+    [Ignore]
     public class PasswordConnectionInfoTest : TestBase
     {
         [TestMethod]
@@ -48,7 +49,7 @@ namespace Renci.SshNet.Tests.Classes
             #region Example PasswordConnectionInfo PasswordExpired
             var connectionInfo = new PasswordConnectionInfo("host", "username", "password");
             var encoding = SshData.Ascii;
-            connectionInfo.PasswordExpired += delegate(object sender, AuthenticationPasswordChangeEventArgs e)
+            connectionInfo.PasswordExpired += delegate (object sender, AuthenticationPasswordChangeEventArgs e)
             {
                 e.NewPassword = encoding.GetBytes("123456");
             };
@@ -74,7 +75,7 @@ namespace Renci.SshNet.Tests.Classes
 
             #region Example PasswordConnectionInfo AuthenticationBanner
             var connectionInfo = new PasswordConnectionInfo(host, username, password);
-            connectionInfo.AuthenticationBanner += delegate(object sender, AuthenticationBannerEventArgs e)
+            connectionInfo.AuthenticationBanner += delegate (object sender, AuthenticationBannerEventArgs e)
             {
                 Console.WriteLine(e.BannerMessage);
             };

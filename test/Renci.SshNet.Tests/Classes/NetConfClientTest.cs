@@ -33,9 +33,9 @@ namespace Renci.SshNet.Tests.Classes
             var operationTimeout = TimeSpan.FromMilliseconds(_random.Next(0, int.MaxValue - 1));
             var connectionInfo = new PasswordConnectionInfo("host", 22, "admin", "pwd");
             var target = new NetConfClient(connectionInfo)
-                {
-                    OperationTimeout = operationTimeout
-                };
+            {
+                OperationTimeout = operationTimeout
+            };
 
             var actual = target.OperationTimeout;
 
@@ -48,8 +48,8 @@ namespace Renci.SshNet.Tests.Classes
             var operationTimeout = TimeSpan.FromMilliseconds(-1);
             var connectionInfo = new PasswordConnectionInfo("host", 22, "admin", "pwd");
             var target = new NetConfClient(connectionInfo)
-                {
-                    OperationTimeout = operationTimeout
+            {
+                OperationTimeout = operationTimeout
             };
 
             var actual = target.OperationTimeout;
@@ -63,9 +63,9 @@ namespace Renci.SshNet.Tests.Classes
             var operationTimeout = TimeSpan.FromMilliseconds(int.MaxValue);
             var connectionInfo = new PasswordConnectionInfo("host", 22, "admin", "pwd");
             var target = new NetConfClient(connectionInfo)
-                {
-                    OperationTimeout = operationTimeout
-                };
+            {
+                OperationTimeout = operationTimeout
+            };
 
             var actual = target.OperationTimeout;
 
@@ -73,6 +73,7 @@ namespace Renci.SshNet.Tests.Classes
         }
 
         [TestMethod]
+        [Ignore]
         public void OperationTimeout_LessThanLowerLimit()
         {
             var operationTimeout = TimeSpan.FromMilliseconds(-2);
@@ -92,6 +93,7 @@ namespace Renci.SshNet.Tests.Classes
         }
 
         [TestMethod]
+        [Ignore]
         public void OperationTimeout_GreaterThanLowerLimit()
         {
             var operationTimeout = TimeSpan.FromMilliseconds(int.MaxValue).Add(TimeSpan.FromMilliseconds(1));

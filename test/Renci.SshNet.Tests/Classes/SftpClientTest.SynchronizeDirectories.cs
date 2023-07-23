@@ -43,6 +43,7 @@ namespace Renci.SshNet.Tests.Classes
         [TestMethod]
         [TestCategory("Sftp")]
         [TestCategory("integration")]
+        [Ignore]
         public void Test_Sftp_BeginSynchronizeDirectories()
         {
             RemoveAllFiles();

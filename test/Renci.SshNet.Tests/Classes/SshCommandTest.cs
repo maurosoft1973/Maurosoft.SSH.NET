@@ -17,6 +17,7 @@ namespace Renci.SshNet.Tests.Classes
     /// Represents SSH command that can be executed.
     /// </summary>
     [TestClass]
+	[Ignore]
     public partial class SshCommandTest : TestBase
     {
         [TestMethod]

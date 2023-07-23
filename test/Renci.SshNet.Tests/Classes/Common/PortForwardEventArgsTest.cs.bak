@@ -48,7 +48,6 @@ namespace Renci.SshNet.Tests.Classes.Common
         }
 
         [TestMethod]
-		[Ignore]
         public void ConstructorShouldThrowArgumentOutOfRangeExceptionWhenPortIsGreaterThanMaximumValue()
         {
             const int port = IPEndPoint.MaxPort + 1;

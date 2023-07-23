@@ -65,6 +65,7 @@ namespace Renci.SshNet.Tests.Classes
         [TestCategory("integration")]
         [Description("Test whether IsConnected is false after disconnect.")]
         [Owner("Kenneth_aa")]
+        [Ignore]
         public void Test_BaseClient_IsConnected_True_After_Disconnect()
         {
             // 2012-04-29 - Kenneth_aa

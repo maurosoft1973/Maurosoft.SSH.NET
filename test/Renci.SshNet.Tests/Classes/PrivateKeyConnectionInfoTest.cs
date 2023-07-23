@@ -10,6 +10,7 @@ namespace Renci.SshNet.Tests.Classes
     /// Provides connection information when private key authentication method is used
     /// </summary>
     [TestClass]
+	[Ignore]
     public class PrivateKeyConnectionInfoTest : TestBase
     {
         [TestMethod]

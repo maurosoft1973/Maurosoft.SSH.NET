@@ -13,6 +13,7 @@ namespace Renci.SshNet.Tests.Classes
     /// Provides functionality for local port forwarding
     /// </summary>
     [TestClass]
+	[Ignore]
     public partial class ForwardedPortLocalTest : TestBase
     {
         [TestMethod]

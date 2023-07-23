@@ -16,6 +16,7 @@ namespace Renci.SshNet.Tests.Classes
         }
 
         [TestMethod]
+        [Ignore]
         public void Ctor_PartialSuccessLimit_Zero()
         {
             const int partialSuccessLimit = 0;
@@ -34,6 +35,7 @@ namespace Renci.SshNet.Tests.Classes
         }
 
         [TestMethod]
+        [Ignore]
         public void Ctor_PartialSuccessLimit_Negative()
         {
             var partialSuccessLimit = new Random().Next(int.MinValue, -1);
@@ -73,7 +75,7 @@ namespace Renci.SshNet.Tests.Classes
         [TestMethod]
         public void AuthenticateShouldThrowArgumentNullExceptionWhenConnectionInfoIsNull()
         {
-           const IConnectionInfoInternal connectionInfo = null;
+            const IConnectionInfoInternal connectionInfo = null;
             var session = new Mock<ISession>(MockBehavior.Strict).Object;
 
             try

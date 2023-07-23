@@ -5,7 +5,6 @@ using Renci.SshNet.Tests.Properties;
 namespace Renci.SshNet.Tests.Classes
 {
     [TestClass]
-	[Ignore]
     public class ConnectionInfoTest_Authenticate_Success
     {
         private Mock<IServiceFactory> _serviceFactoryMock;

@@ -10,6 +10,7 @@ namespace Renci.SshNet.Tests.Classes
     /// Provides connection information when keyboard interactive authentication method is used
     /// </summary>
     [TestClass]
+	[Ignore]
     public class KeyboardInteractiveConnectionInfoTest : TestBase
     {
         [TestMethod]

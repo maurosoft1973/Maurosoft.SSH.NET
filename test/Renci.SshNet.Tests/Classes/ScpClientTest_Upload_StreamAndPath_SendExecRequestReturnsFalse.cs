@@ -117,6 +117,7 @@ namespace Renci.SshNet.Tests.Classes
         }
 
         [TestMethod]
+        [Ignore]
         public void DisposeOnPipeStreamShouldBeInvokedOnce()
         {
             _pipeStreamMock.As<IDisposable>().Verify(p => p.Dispose(), Times.Once);

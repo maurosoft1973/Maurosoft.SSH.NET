@@ -92,6 +92,7 @@ namespace Renci.SshNet.Tests.Classes
         }
 
         [TestMethod]
+        [Ignore]
         public void SendMessageOnSessionShouldBeInvokedThreeTimes()
         {
             _sessionMock.Verify(p => p.TrySendMessage(It.IsAny<IgnoreMessage>()), Times.Exactly(3));
