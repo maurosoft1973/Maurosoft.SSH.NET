@@ -1,33 +1,21 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
-VisualStudioVersion = 16.0.29521.150
+VisualStudioVersion = 16.0.33801.447
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{2D6CAE62-D053-476F-9BDD-2B1F27FA9C5D}"
-	ProjectSection(SolutionItems) = preProject
-		..\build\build.cmd = ..\build\build.cmd
-		..\build\build.proj = ..\build\build.proj
-	EndProjectSection
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Renci.SshNet", "src\Renci.SshNet\Renci.SshNet.csproj", "{2F5F8C90-0BD1-424F-997C-7BC6280919D1}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nuget", "nuget", "{94EE3919-19FA-4D9B-8DA9-249050B15232}"
-	ProjectSection(SolutionItems) = preProject
-		..\build\nuget\SSH.NET.nuspec = ..\build\nuget\SSH.NET.nuspec
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sandcastle", "sandcastle", "{A6C3FFD3-16A5-44D3-8C1F-3613D6DD17D1}"
-	ProjectSection(SolutionItems) = preProject
-		..\build\sandcastle\SSH.NET.shfbproj = ..\build\sandcastle\SSH.NET.shfbproj
-	EndProjectSection
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Renci.SshNet", "Renci.SshNet\Renci.SshNet.csproj", "{2F5F8C90-0BD1-424F-997C-7BC6280919D1}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Renci.SshNet.Tests", "Renci.SshNet.Tests\Renci.SshNet.Tests.csproj", "{C45379B9-17B1-4E89-BC2E-6D41726413E8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Renci.SshNet.Tests", "test\Renci.SshNet.Tests\Renci.SshNet.Tests.csproj", "{C45379B9-17B1-4E89-BC2E-6D41726413E8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DDB0A310-24A6-47B7-A0AB-90857C9378DE}"
 	ProjectSection(SolutionItems) = preProject
-		..\.gitignore = ..\.gitignore
-		..\README.md = ..\README.md
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		LICENSE = LICENSE
+		README.md = README.md
 	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{D1072051-18C2-46FD-92CD-DDDBD7C4AD4E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -76,8 +64,7 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{94EE3919-19FA-4D9B-8DA9-249050B15232} = {2D6CAE62-D053-476F-9BDD-2B1F27FA9C5D}
-		{A6C3FFD3-16A5-44D3-8C1F-3613D6DD17D1} = {2D6CAE62-D053-476F-9BDD-2B1F27FA9C5D}
+		{C45379B9-17B1-4E89-BC2E-6D41726413E8} = {D1072051-18C2-46FD-92CD-DDDBD7C4AD4E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BAD6019D-4AF7-4E15-99A0-8036E16FC0E5}

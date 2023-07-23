@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <SignAssembly>true</SignAssembly>
-        <AssemblyOriginatorKeyFile>..\Renci.SshNet.snk</AssemblyOriginatorKeyFile>
+        <AssemblyOriginatorKeyFile>../../Renci.SshNet.snk</AssemblyOriginatorKeyFile>
         <TargetFrameworks>netstandard2.0</TargetFrameworks>
     </PropertyGroup>
 
@@ -31,7 +31,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <None Include="..\Renci.SshNet.snk" Link="Renci.SshNet.snk" />
+        <None Include="../../Renci.SshNet.snk" Link="Renci.SshNet.snk" />
     </ItemGroup>
 
     <PropertyGroup Condition=" '$(VisualStudioVersion)' == '16.0' ">
@@ -57,7 +57,8 @@
         </PackageReference>
         <PackageReference Include="Moq" Version="4.18.4" />
     </ItemGroup>
+
     <ItemGroup>
-        <ProjectReference Include="..\Renci.SshNet\Renci.SshNet.csproj" />
+      <ProjectReference Include="..\..\src\Renci.SshNet\Renci.SshNet.csproj" />
     </ItemGroup>
 </Project>
