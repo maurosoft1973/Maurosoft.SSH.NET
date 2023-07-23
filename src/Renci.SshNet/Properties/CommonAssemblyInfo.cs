@@ -2,7 +2,7 @@ using System;
 using System.Reflection;
 using System.Runtime.InteropServices;
 
-[assembly: AssemblyDescription("SSH.NET is a Secure Shell (SSH) library for .NET, optimized for parallelism.")]
+[assembly: AssemblyDescription("SSH.NET is a Secure Shell (SSH) library for .NET, optimized for parallelism.\r\nThis is a cloned and slightly updated build of SSH.NET with the support for unit test.")]
 [assembly: AssemblyCompany("Mauro Cardillo")]
 [assembly: AssemblyProduct("SSH.NET")]
 [assembly: AssemblyCopyright("Copyright © Renci 2010-2021")]

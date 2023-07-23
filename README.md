@@ -5,25 +5,6 @@ This is a cloned and slightly updated build of SSH.NET with the support for unit
 [![Version](https://img.shields.io/nuget/v/Maurosoft.SSH.NET)](https://www.nuget.org/packages/Maurosoft.SSH.NET)
 [![NuGet download count](https://img.shields.io/nuget/dt/Maurosoft.SSH.NET)](https://www.nuget.org/packages/Maurosoft.SSH.NET)
 
-## Introduction
-This project was inspired by **Sharp.SSH** library which was ported from java and it seems like was not supported
-for quite some time. This library is a complete rewrite, without any third party dependencies, using parallelism
-to achieve the best performance possible.
-
-## Documentation
-There is MSDN-style class documentation in a .chm file for each release, which you can find in the Assets section
-of the [latest release](https://github.com/sshnet/SSH.NET/releases/latest) page.  Please note that you will need
-to [right-click and "unblock"](https://support.microsoft.com/en-us/help/2021383/some-chm-files-may-not-render-properly-on-windows-vista-and-windows-7)
-the CHM file after you download it.
-
-Currently (4/18/2020), the documentation is very sparse.  Fortunately, there are a large number of tests in
-[Renci.SshNet.Tests](https://github.com/sshnet/SSH.NET/tree/develop/src/Renci.SshNet.Tests) that demonstrate
-usage with working code.
-
-If the test for the functionality you would like to see documented is not complete, then you are cordially
-invited to read the source, Luke, and highly encouraged to generate a pull request for the implementation of
-the missing test once you figure things out.  🤓
-
 ## Features
 * Execution of SSH command using both synchronous and asynchronous methods
 * Return command execution exit status and other information 
@@ -187,6 +168,3 @@ Visual Studio 2015 Update 3       | x     | x     |                |            
 Visual Studio 2017                | x     | x     | x              | x              |     |     |      |     | 
 Visual Studio 2019                | x     | x     | x              | x              |     |     |      |     | 
 
-## Supporting SSH.NET
-
-Do you or your company rely on **SSH.NET** in your projects? If you want to encourage us to keep on going and show us that you appreciate our work, please consider becoming a [sponsor](https://github.com/sponsors/sshnet) through GitHub Sponsors.
