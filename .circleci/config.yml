@@ -35,7 +35,7 @@ jobs:
       - run:
           name: Verify
           command: |
-            dotnet build -p:TreatWarningsAsErrors=True -p:EnforceCodeStyleInBuild=True
+            dotnet build --configuration Release -p:TreatWarningsAsErrors=True -p:EnforceCodeStyleInBuild=True
       - run:
           name: Run Tests
           command: |
